@@ -1,0 +1,21 @@
+{
+  "verbs": {
+    "grab":    "take",
+    "pick":    "take",
+    "pick up": "take",
+    "get":     "take",
+    "leave":   "drop",
+    "move":    "go",
+    "examine": "inspect",
+    "look at": "inspect",
+    "inv":     "inventory",
+    "i":       "inventory",
+    "use on":  "use",
+    "unlock":  "unlock",
+    "read":    "read",
+    "quit":    "quit",
+    "exit":    "exit"
+  },
+  "prepositions": ["with", "to", "on", "at", "using"],
+  "articles": ["the", "a", "an"]
+}

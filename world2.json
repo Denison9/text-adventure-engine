@@ -1,0 +1,127 @@
+{
+  "startingRoom": "control_room",
+  "rooms": [
+    {
+      "id": "control_room",
+      "name": "Control Room",
+      "description": "A dimly lit control room aboard the abandoned Station AURORA. Emergency lights flicker overhead, casting red shadows on the walls. A magnetic keycard rests on the main console. A sealed door blocks the path north to the main corridor. To the south, a cargo hatch leads deeper into the station.",
+      "exits": {
+        "north": "corridor",
+        "south": "cargo_bay"
+      },
+      "lockedExits": [
+        "north"
+      ],
+      "items": [
+        {
+          "name": "keycard",
+          "description": "A magnetic access keycard. Level 3 clearance. The station logo is embossed on the front -- it should open the door to the corridor."
+        }
+      ],
+      "openables": [
+        {
+          "name": "door",
+          "initiallyOpen": false,
+          "requiresItem": "keycard",
+          "linkedDirection": "north"
+        }
+      ]
+    },
+    {
+      "id": "cargo_bay",
+      "name": "Cargo Bay",
+      "description": "A vast cargo bay filled with rows of abandoned supply crates. Most have been pried open and looted. The air is stale and cold. Faded hazard markings line the floor. The control room lies to the north.",
+      "exits": {
+        "north": "control_room"
+      },
+      "items": [
+        {
+          "name": "suit",
+          "description": "A heavy-duty hazmat suit hanging on an emergency rack. It appears intact. Might protect you in a contaminated environment."
+        },
+        {
+          "name": "log",
+          "description": "A battered data pad found wedged between two crates.",
+          "readableText": "EMERGENCY LOG -- STARDATE 2347.9: Station AURORA is being evacuated. Reactor containment breach imminent. All non-essential personnel must leave immediately. The vault core contains the schematics for Project HERALD -- must not fall into enemy hands. The vault card has been moved to the laboratory. Use the server room terminal to unlock vault access. Good luck."
+        }
+      ]
+    },
+    {
+      "id": "corridor",
+      "name": "Main Corridor",
+      "description": "The main corridor of Station AURORA. Flickering fluorescent lights cast long shadows on the metal walls. Warning signs line the doors. Passages lead south to the control room, east to the laboratory, and north to the server room.",
+      "exits": {
+        "south": "control_room",
+        "east": "laboratory",
+        "north": "server_room"
+      },
+      "items": [
+        {
+          "name": "map",
+          "description": "A laminated evacuation map of Station AURORA mounted on the wall.",
+          "readableText": "STATION AURORA -- LAYOUT: Main Corridor (you are here). South: Control Room. East: Research Laboratory -- vault card stored there. North: Server Room -- vault terminal here. Secure Vault at far north. Retrieve the core to complete your mission."
+        }
+      ]
+    },
+    {
+      "id": "laboratory",
+      "name": "Research Laboratory",
+      "description": "A sterile research laboratory. Broken equipment lines the walls. Data pads are scattered across the workbenches. The scientists left in a hurry. The corridor is to the west.",
+      "exits": {
+        "west": "corridor"
+      },
+      "items": [
+        {
+          "name": "card",
+          "description": "A high-security vault access card. It bears the station seal: SECURE VAULT -- AUTHORIZED PERSONNEL ONLY. Use this on the terminal in the server room."
+        },
+        {
+          "name": "journal",
+          "description": "A sealed research journal recovered from a workbench.",
+          "readableText": "RESEARCH LOG -- DR. VOSS: The core stores the complete schematics for Project HERALD. I have hidden the vault card here in the laboratory. To enter the vault, use the card on the terminal in the server room -- it will unlock the reinforced door. Do not let the core fall into enemy hands."
+        },
+        {
+          "name": "jar",
+          "description": "A sealed glass jar containing a strange luminescent organism. Label reads: SPECIMEN 7-ALPHA -- DO NOT OPEN. It glows faintly green."
+        }
+      ]
+    },
+    {
+      "id": "server_room",
+      "name": "Server Room",
+      "description": "Banks of servers line every wall, their cooling fans whirring in the silence. A security terminal stands in the center, its screen glowing amber. A reinforced door to the north leads to the Secure Vault -- currently locked. The corridor is to the south.",
+      "exits": {
+        "south": "corridor",
+        "north": "vault"
+      },
+      "lockedExits": [
+        "north"
+      ],
+      "items": [],
+      "openables": [
+        {
+          "name": "terminal",
+          "initiallyOpen": false,
+          "requiresItem": "card",
+          "linkedDirection": "north"
+        }
+      ]
+    },
+    {
+      "id": "vault",
+      "name": "Secure Vault",
+      "description": "The Secure Vault of Station AURORA. Cold, silent, still. In the center of the room, on a magnetic pedestal bathed in pale blue light, sits the core -- the object of your entire mission. Take it and use it to complete your assignment. The server room lies to the south.",
+      "exits": {
+        "south": "server_room"
+      },
+      "items": [
+        {
+          "name": "core",
+          "description": "The data core. A sleek cylindrical device pulsing with light, housing the complete schematics for Project HERALD. This is what you came for. Use it to complete your mission."
+        }
+      ],
+      "isWinningRoom": true,
+      "requiredItemToWin": "core"
+    }
+  ]
+}

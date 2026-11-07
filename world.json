@@ -1,0 +1,102 @@
+{
+  "startingRoom": "entrance",
+  "rooms": [
+    {
+      "id": "entrance",
+      "name": "Castle Entrance",
+      "description": "You stand at the entrance of an ancient castle. A dark corridor leads north. A heavy door lies to the east.",
+      "exits": {
+        "north": "corridor",
+        "east": "garden"
+      },
+      "items": [
+        {
+          "name": "lantern",
+          "description": "An old oil lantern. It lights your way through the darkness."
+        }
+      ]
+    },
+    {
+      "id": "corridor",
+      "name": "Dark Corridor",
+      "description": "A long, dark corridor. It smells of damp stone. Paths lead north to the throne room, south to the entrance, and west to the armory.",
+      "exits": {
+        "south": "entrance",
+        "north": "throne_room",
+        "west": "armory"
+      },
+      "items": [
+        {
+          "name": "key",
+          "description": "A rusty iron key. It looks like it belongs to one of the castle locks."
+        }
+      ]
+    },
+    {
+      "id": "throne_room",
+      "name": "Throne Room",
+      "description": "The grand throne room. An ancient crown rests on the throne. Use the crown to complete your quest!",
+      "exits": {
+        "south": "corridor"
+      },
+      "items": [],
+      "isWinningRoom": true,
+      "requiredItemToWin": "crown"
+    },
+    {
+      "id": "garden",
+      "name": "Hidden Garden",
+      "description": "A quiet garden with stone paths. Nature has reclaimed everything. A heavy door blocks the path to the north -- you will need a key.",
+      "exits": {
+        "west": "entrance",
+        "north": "secret_vault"
+      },
+      "lockedExits": [
+        "north"
+      ],
+      "items": [
+        {
+          "name": "crown",
+          "description": "An ancient golden crown. It still gleams despite the years."
+        }
+      ],
+      "openables": [
+        {
+          "name": "door",
+          "initiallyOpen": false,
+          "requiresItem": "key",
+          "linkedDirection": "north"
+        }
+      ]
+    },
+    {
+      "id": "secret_vault",
+      "name": "Secret Vault",
+      "description": "A hidden vault filled with old relics. The exit is to the south.",
+      "exits": {
+        "south": "garden"
+      },
+      "items": [
+        {
+          "name": "map",
+          "description": "An old map of the castle showing all the hidden passages.",
+          "readableText": "The map shows the castle layout. The garden to the east holds something of great value. The corridor leads north to the throne room, the seat of power and your ultimate goal."
+        }
+      ]
+    },
+    {
+      "id": "armory",
+      "name": "Armory",
+      "description": "An old armory. Most of the weapons have rusted away. Exit to the east.",
+      "exits": {
+        "east": "corridor"
+      },
+      "items": [
+        {
+          "name": "shield",
+          "description": "An old wooden shield. Still holding together."
+        }
+      ]
+    }
+  ]
+}
