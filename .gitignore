@@ -32,3 +32,8 @@ bin/
 ### IntelliJ project files ###
 .idea/
 *.iml
+### Maven ###
+target/
+
+### Game saves ###
+savegame.json
